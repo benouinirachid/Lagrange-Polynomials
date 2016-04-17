@@ -15,7 +15,9 @@ def plot(X_finite, X_actual, Y_actual, L, MSE, n, LP_limit, plot_time_pause):
 	plt.plot(X_finite, Y_finite, 'ro')
 
 	plt.plot(X_actual, Y_actual, 'k')
-	plt.title("L{}".format(len(X_finite)))
+	plt.xlabel('x')
+	plt.ylabel('y')
+	plt.title("Lagrange Polynomial, L{}".format(len(X_finite)))
 
 	L.plot()
 
@@ -37,7 +39,7 @@ def plot_mse(MSE, n):
 	plt.plot(np.linspace(0, len(x_n)+2, 50), np.zeros(50), 'k--')
 	plt.xlabel("L degree polynomial")
 	plt.ylabel("MSE")
-	plt.title("MSE vs. L degree\nCurrent MSE: {:.2e}".format(MSE[n-1]))
+	plt.title("MSE at L{}: {:.2e}".format(n+1, MSE[n-1]))
 	x_min, x_max = 1, max(x_n)+1
 	y_min = min(MSE) - max(MSE)*0.15
 	y_max = max(MSE)*1.25
