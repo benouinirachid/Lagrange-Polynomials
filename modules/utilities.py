@@ -3,7 +3,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def function(x):
-	return x**4 - 3.8*x**2 - 1
+	m = 4.
+	b = -4.
+	return b*x**m
 
 
 def plot(X_finite, X_actual, Y_actual, L, MSE, n, LP_limit, plot_time_pause):
@@ -18,7 +20,6 @@ def plot(X_finite, X_actual, Y_actual, L, MSE, n, LP_limit, plot_time_pause):
 	plt.xlabel('x')
 	plt.ylabel('y')
 	plt.title("Lagrange Polynomial, L{}".format(len(X_finite)))
-
 	L.plot()
 
 	# Plot MSE in subplot 2

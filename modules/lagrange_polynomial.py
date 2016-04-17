@@ -47,8 +47,14 @@ class Lagrange_Polynomial(object):
 		plt.plot(self.X_actual, self.P, 'b--', linewidth=2)
 		x_min = min(self.X_actual) - max(self.X_actual) * 0.25
 		x_max = max(self.X_actual) * 1.25
-		y_min = min(self.Y_actual) - max(self.Y_actual) * 0.25
-		y_max = max(self.Y_actual) * 1.25
+		
+		if np.abs(max(self.Y_actual)) < 1e-3:
+			y_max = np.abs(min(self.Y_actual))*0.075
+			y_min = min(self.Y_actual) - np.abs(min(self.Y_actual) * 0.05)
+		else:
+			y_max = max(self.Y_actual) * 2.25
+			y_min = min(self.Y_actual) - max(self.Y_actual) * 0.25
+
 		plt.axis([x_min, x_max, y_min, y_max])
 
 		
