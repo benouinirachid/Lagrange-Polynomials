@@ -1,4 +1,4 @@
-# Lagrange-Interpolation
+# Lagrange-Polynomials
 
 ## Introduction
 
